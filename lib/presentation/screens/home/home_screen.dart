@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:widgets_app/config/menu/menu_items.dart';
+import 'package:widgets_app/presentation/screens/buttons/buttons_screen.dart';
+import 'package:widgets_app/presentation/screens/cards/cards_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -37,14 +39,28 @@ class _CustomListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = Theme.of(context).colorScheme;
+    final colors = Theme.of(context).colorScheme.primary;
     return ListTile(
-      title: Text(item.title, style: TextStyle(color: colors.primary),),
+      title: Text(
+        item.title,
+        style: TextStyle(color: colors),
+      ),
       subtitle: Text(item.subTitle),
-      leading: Icon(item.icon, color: colors.primary,),
-      trailing: Icon(Icons.chevron_right, color: colors.primary,),
+      leading: Icon(
+        item.icon,
+        color: colors,
+      ),
+      trailing: Icon(
+        Icons.chevron_right,
+        color: colors,
+      ),
       onTap: () {
-        // Todo: Navegar a la ruta
+        // Navigator.of(context).push(
+        //   MaterialPageRoute(
+        //     builder: (context) => const ButtonsScreen(),
+        //   ),
+        // );
+        Navigator.of(context).pushNamed(item.link);
       },
     );
   }

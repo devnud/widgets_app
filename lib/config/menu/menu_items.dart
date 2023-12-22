@@ -43,7 +43,13 @@ const appMenuItems = <MenuItems>[
     title: 'Animated Contanier',
     subTitle: 'Contenedor animado',
     link: '/animated',
-    icon: Icons.animation_rounded,
+    icon: Icons.check_box_outlined,
+  ),
+  MenuItems(
+    title: 'UI Controls + Titles',
+    subTitle: 'Una serie de controles en Flutter',
+    link: '/ui-controls',
+    icon: Icons.car_rental_outlined,
   ),
   MenuItems(
     title: 'App Tutorial',
@@ -57,10 +63,5 @@ const appMenuItems = <MenuItems>[
     link: '/infinite',
     icon: Icons.vertical_align_bottom_rounded,
   ),
-  MenuItems(
-    title: 'UI Controls',
-    subTitle: 'UI Controls',
-    link: '/ui_controls',
-    icon: Icons.contrast_sharp,
-  ),
+  
 ];

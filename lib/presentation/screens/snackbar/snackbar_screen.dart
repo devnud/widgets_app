@@ -46,7 +46,6 @@ class SnackbarScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = Theme.of(context).colorScheme;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Snackbar y Diálogos'),

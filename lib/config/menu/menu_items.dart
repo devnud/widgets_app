@@ -52,10 +52,10 @@ const appMenuItems = <MenuItems>[
     icon: Icons.car_rental_outlined,
   ),
   MenuItems(
-    title: 'App Tutorial',
-    subTitle: 'Tutorial de una app',
+    title: 'Introducción a la apliccaión',
+    subTitle: 'Pequeño tutorial de la aplicación',
     link: '/tutorial',
-    icon: Icons.tungsten_rounded,
+    icon: Icons.accessibility_rounded,
   ),
   MenuItems(
     title: 'Infinite Scroll',

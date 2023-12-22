@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:widgets_app/presentation/screens/buttons/buttons_screen.dart';
-import 'package:widgets_app/presentation/screens/cards/cards_screen.dart';
-import 'package:widgets_app/presentation/screens/home/home_screen.dart';
+import 'package:widgets_app/presentation/screens/screens.dart';
 
 final GoRouter appRouter = GoRouter(
   initialLocation: '/',
@@ -26,6 +24,47 @@ final GoRouter appRouter = GoRouter(
       name: CardsScreen.name,
       builder: (BuildContext context, GoRouterState state) {
         return const CardsScreen();
+      },
+    ),GoRoute(
+      path: '/progress',
+      name: ProgressScreen.name,
+      builder: (BuildContext context, GoRouterState state) {
+        return const ProgressScreen();
+      },
+    ),
+    GoRoute(
+      path: '/animated',
+      name: AnimatedScreen.name,
+      builder: (BuildContext context, GoRouterState state) {
+        return const AnimatedScreen();
+      },
+    ),
+    GoRoute(
+      path: '/tutorial',
+      name: AppTutorialScreen.name,
+      builder: (BuildContext context, GoRouterState state) {
+        return const AppTutorialScreen();
+      },
+    ),
+    GoRoute(
+      path: '/infinite',
+      name: InfiniteScrollScreen.name,
+      builder: (BuildContext context, GoRouterState state) {
+        return const InfiniteScrollScreen();
+      },
+    ),
+    GoRoute(
+      path: '/snackbar',
+      name: SnackbarScreen.name,
+      builder: (BuildContext context, GoRouterState state) {
+        return const SnackbarScreen();
+      },
+    ),
+    GoRoute(
+      path: '/ui_controls',
+      name: UiControlsScreen.name,
+      builder: (BuildContext context, GoRouterState state) {
+        return const UiControlsScreen();
       },
     ),
   ],

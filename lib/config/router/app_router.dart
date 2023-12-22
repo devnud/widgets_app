@@ -33,6 +33,13 @@ final GoRouter appRouter = GoRouter(
       },
     ),
     GoRoute(
+      path: '/snackbar',
+      name: SnackbarScreen.name,
+      builder: (BuildContext context, GoRouterState state) {
+        return const SnackbarScreen();
+      },
+    ),
+    GoRoute(
       path: '/animated',
       name: AnimatedScreen.name,
       builder: (BuildContext context, GoRouterState state) {
@@ -51,13 +58,6 @@ final GoRouter appRouter = GoRouter(
       name: InfiniteScrollScreen.name,
       builder: (BuildContext context, GoRouterState state) {
         return const InfiniteScrollScreen();
-      },
-    ),
-    GoRoute(
-      path: '/snackbar',
-      name: SnackbarScreen.name,
-      builder: (BuildContext context, GoRouterState state) {
-        return const SnackbarScreen();
       },
     ),
     GoRoute(

@@ -10,25 +10,23 @@ const colorList = <Color>[
   Colors.pink,
   Colors.teal,
   Colors.cyan,
-  Colors.amber,
-  Colors.lime,
-  Colors.indigo,
-  Colors.brown,
-  Colors.grey,
-  Colors.blueGrey,
+ 
 ];
 
 class AppTheme {
   final int selectecColor;
+  final bool isDartMode;
 
   AppTheme({
     this.selectecColor = 0,
+    this.isDartMode = false, 
   }) : assert(selectecColor >= 0, 'selectecColor must be greate then 0'),
        assert(selectecColor < colorList.length, 
        'selectecColor must be less or equal than ${colorList.length}') ;
 
 
   ThemeData getTheme() => ThemeData(
+        brightness: isDartMode ? Brightness.dark : Brightness.light,
         colorSchemeSeed: colorList[selectecColor],
         appBarTheme: const AppBarTheme(
           centerTitle: true,

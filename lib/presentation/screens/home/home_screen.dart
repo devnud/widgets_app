@@ -13,7 +13,7 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
 
-    final bool isDarkMode = ref.watch(isDarkModeProvider);
+    final bool isDarkMode = ref.watch(themeNotifierProvider).isDarkMode;
 
     final scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
@@ -27,7 +27,7 @@ class HomeScreen extends ConsumerWidget {
                 : const Icon(Icons.light_mode_outlined),
             // icon: Icon(Icons.dark_mode_outlined),
             onPressed: () {
-              ref.read(isDarkModeProvider.notifier).state = !isDarkMode;
+              ref.read(themeNotifierProvider.notifier).toogleDartMode();
             },
           ),
         ],

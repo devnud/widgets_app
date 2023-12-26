@@ -9,8 +9,7 @@ class CounterScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    
-    final int clickCounter = ref.watch(counterProvider);
+    final int clickCounter = ref.watch(counterNotifierProvider);
     final bool isDarkMode = ref.watch(themeNotifierProvider).isDarkMode;
 
     return Scaffold(
@@ -34,13 +33,37 @@ class CounterScreen extends ConsumerWidget {
           style: Theme.of(context).textTheme.titleLarge,
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            onPressed: () {
+              // las dos valen igual
+              ref.watch(counterNotifierProvider.notifier).reset();
+              // ref.read(counterProvider.notifier).update((state) => state + 1);
+            },
+            child: const Icon(Icons.refresh_rounded),
+          ),
+          const SizedBox(height: 10),
+          FloatingActionButton(
+            onPressed: () {
+              // las dos valen igual
+              ref.watch(counterNotifierProvider.notifier).increment();
+              // ref.read(counterProvider.notifier).update((state) => state + 1);
+            },
+            child: const Icon(Icons.add),
+          ),
+          const SizedBox(height: 10),
+          FloatingActionButton(
         onPressed: () {
           // las dos valen igual
-          ref.read(counterProvider.notifier).state++;
+          ref.watch(counterNotifierProvider.notifier).decrement();
           // ref.read(counterProvider.notifier).update((state) => state + 1);
         },
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.exposure_neg_1_outlined),
+      ),
+      
+        ],
       ),
     );
   }
